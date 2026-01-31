@@ -1,53 +1,41 @@
-# Matter Code Vault
+Matter Code Vault
+Matter Device Management & QR Code Backup/Restore Tool (v2.22.7)
 
-> Matter 기기 관리 및 QR 코드 백업/복원 도구 (v2.22.7)
+Matter Code Vault is a powerful Home Assistant add-on designed for seamless Matter device management. Securely back up complex pairing codes and QR codes, and manage them intelligently using AI-driven features.
 
-Matter Code Vault는 Home Assistant 사용자를 위해 설계된 강력한 Matter 기기 관리 애드온입니다. 복잡한 페어링 코드와 QR 코드를 안전하게 백업하고, AI 기능을 통해 스마트하게 관리하세요.
+✨ Features
+1. Structured Classification System (Setup) Organize your data by pre-defining installation locations, manufacturers, platforms, and device types. Build a clean, typo-free library simply by selecting pre-registered tags.
 
-## ✨ Features
+2. Smart Device Registration Register devices by scanning QR codes via PC webcam or mobile camera, or by uploading photos from your gallery. Google Gemini AI analyzes device information to automatically recommend the most appropriate names.
 
-**1. 체계적인 분류 시스템 (Setup)**
-설치 장소, 제조사, 플랫폼, 기기 종류를 미리 정의하여 체계적인 데이터 관리가 가능합니다. 미리 등록된 태그를 선택하기만 하면 되어 오타 없는 깔끔한 라이브러리를 구축할 수 있습니다.
+3. Intelligent VID Management Automatically analyze and learn the Vendor ID (VID) of Matter devices. Even for manufacturers not on the official list, you can manually add or edit mapping information for perfect management.
 
-**2. 스마트한 기기 등록 (Smart Registration)**
-PC 웹캠이나 모바일 카메라로 QR 코드를 스캔하거나, 갤러리의 사진을 업로드하여 기기를 등록하세요. Google Gemini AI가 기기 정보를 분석하여 가장 적절한 이름을 자동으로 추천해줍니다.
+4. Intuitive Main UI & Dynamic Filtering Find devices using natural language queries via AI or utilize powerful search and filter functions. The Automatic Location Filtering feature hides empty locations, and you can reorder rooms with a simple drag-and-drop.
 
-**3. 지능형 제조사 관리 (VID Management)**
-Matter 기기의 Vendor ID(VID)를 자동으로 분석하고 학습합니다. 공식 목록에 없는 제조사라도 사용자가 직접 매핑 정보를 추가하거나 수정하여 완벽하게 관리할 수 있습니다.
+5. QR Image Generation & Labeling Re-generate high-quality QR code images from your stored data. Download images optimized for label printers to attach to physical devices for easy re-pairing anytime.
 
-**4. 쾌적한 메인 화면과 동적 필터링**
-AI에게 자연어로 질문하여 기기를 찾거나, 강력한 검색 및 필터 기능을 제공합니다. 특히 **자동 장소 필터링** 기능으로 기기가 없는 빈 장소는 자동으로 숨겨주며, 드래그 앤 드롭으로 장소 순서를 내 맘대로 변경할 수 있습니다.
+6. Seamless Backup & Restore Export or import your precious device data as JSON files. Restore your data safely without fear of loss, even after a fresh Home Assistant reinstallation.
 
-**5. QR 이미지 생성 및 라벨링**
-저장된 데이터로 고품질 QR 코드 이미지를 다시 생성할 수 있습니다. 라벨 프린터용 이미지를 다운로드하여 물리적인 기기에 부착해두면, 언제든 손쉽게 재페어링이 가능합니다.
+7. Creator Mode (🛡️) Designed with YouTubers and bloggers in mind. 'Creator Mode' precisely masks sensitive QR codes and pairing digits, allowing you to share your screen with confidence.
 
-**6. 완벽한 백업 및 복원**
-소중한 기기 데이터를 JSON 파일로 내보내거나 불러올 수 있습니다. Home Assistant를 재설치하더라도 데이터 손실 걱정 없이 안전하게 복원하세요.
+🚀 How to Install (Add Repository)
+Install this add-on by adding the repository to your Home Assistant Add-on Store.
 
-**7. 크리에이터 모드 (Creator Mode 🛡️)**
-유튜버나 블로거를 위한 배려도 잊지 않았습니다. 민감한 QR 코드와 페어링 코드 숫자만 정밀하게 가려주는 '크리에이터 모드'를 통해 안심하고 화면을 공유하세요.
+Navigate to Home Assistant Settings > Add-ons > Add-on Store.
 
-<br>
+Click the Menu (3 dots) in the top right corner > Repositories.
 
-## 🚀 How to Install (Add Repository)
+Enter the following URL and click Add:
 
-Home Assistant 애드온 스토어에 이 저장소를 추가하여 설치할 수 있습니다.
+Plaintext
+https://github.com/dicapriokim/Matter-Code-Vault
+Find Matter Code Vault in the list and click Install.
 
-1. Home Assistant 설정 > **Add-ons** > **Add-on Store**로 이동합니다.
-2. 우측 상단 메뉴(점 3개) > **Repositories**를 클릭합니다.
-3. 아래 URL을 입력하고 **Add**를 클릭합니다.
-   ```text
-   https://github.com/dicapriokim/Matter-Code-Vault
-   ```
-4. 목록에 새로 나타난 **Matter Code Vault**를 찾아 설치합니다.
+⚠️ Important Notes
+Data Storage: This app stores data locally in the /data/matter_data.json file within Home Assistant. Since deleting the add-on may also remove this data, always use the backup feature to keep a copy on your PC.
 
-<br>
+Camera Permissions: Due to browser security policies, the camera only functions in HTTPS or localhost (127.0.0.1) environments. When accessing via HTTP externally, please use the 'Photo Album' upload feature.
 
-⚠️ 주의사항
-데이터 저장: 본 앱은 Home Assistant의 /data 폴더에 matter_data.json 파일로 데이터를 로컬 저장합니다. 앱을 삭제하면 데이터도 함께 삭제될 수 있으므로, 반드시 백업 기능을 이용해 데이터를 PC에 보관하세요.
-카메라 권한: 브라우저 보안 정책상 카메라는 HTTPS 또는 localhost(127.0.0.1) 환경에서만 작동합니다. HA 외부 접속(HTTP) 시에는 '사진 앨범' 기능을 이용하세요.
-무결성 검증: 앱 실행 시 코드 무결성을 검증합니다. Unauthorized modification detected 경고가 뜨며 사용이 불가합니다. 임의 수정을 하지마세요.
+Integrity Verification: The app verifies code integrity upon startup. If an "Unauthorized modification detected" warning appears, the app will be disabled. Please do not modify the core files.
 
-**Designed by 돼지지렁이**
-
-
+Designed by 돼지지렁이

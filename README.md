@@ -3,39 +3,68 @@ Matter Device Management & QR Code Backup/Restore Tool (v2.22.7)
 
 Matter Code Vault is a powerful Home Assistant add-on designed for seamless Matter device management. Securely back up complex pairing codes and QR codes, and manage them intelligently using AI-driven features.
 
-✨ Features
-1. Structured Classification System (Setup) Organize your data by pre-defining installation locations, manufacturers, platforms, and device types. Build a clean, typo-free library simply by selecting pre-registered tags.
+✨ Key Features
+Smart Registration: Scan via webcam, upload photos, or manual input with AI-powered name recommendations via Google Gemini.
 
-2. Smart Device Registration Register devices by scanning QR codes via PC webcam or mobile camera, or by uploading photos from your gallery. Google Gemini AI analyzes device information to automatically recommend the most appropriate names.
+Dynamic UI: Auto-hides empty locations and supports drag-and-drop sorting for a clean workspace.
 
-3. Intelligent VID Management Automatically analyze and learn the Vendor ID (VID) of Matter devices. Even for manufacturers not on the official list, you can manually add or edit mapping information for perfect management.
+VID Management: Automatically identifies and learns Manufacturer Vendor IDs from QR payloads.
 
-4. Intuitive Main UI & Dynamic Filtering Find devices using natural language queries via AI or utilize powerful search and filter functions. The Automatic Location Filtering feature hides empty locations, and you can reorder rooms with a simple drag-and-drop.
+Creator Mode (🛡️): Precisely masks sensitive QR/pairing codes for safe screen sharing or streaming.
 
-5. QR Image Generation & Labeling Re-generate high-quality QR code images from your stored data. Download images optimized for label printers to attach to physical devices for easy re-pairing anytime.
+Label Ready: Generate and download high-quality QR images optimized for label printers.
 
-6. Seamless Backup & Restore Export or import your precious device data as JSON files. Restore your data safely without fear of loss, even after a fresh Home Assistant reinstallation.
+📖 Quick Start Guide
+1. Initial Setup
+Before adding devices, define your ecosystem in the [Settings ⚙️] menu to prevent data fragmentation:
 
-7. Creator Mode (🛡️) Designed with YouTubers and bloggers in mind. 'Creator Mode' precisely masks sensitive QR codes and pairing digits, allowing you to share your screen with confidence.
+Locations: Living Room, Bedroom, Entrance, etc.
 
-🚀 How to Install (Add Repository)
-Install this add-on by adding the repository to your Home Assistant Add-on Store.
+Manufacturers: Aqara, Eve, Nanoleaf, etc.
 
-Navigate to Home Assistant Settings > Add-ons > Add-on Store.
+Platforms: Apple Home, SmartThings, Home Assistant, etc.
 
-Click the Menu (3 dots) in the top right corner > Repositories.
+2. Adding a Device
+Click the [+] button. You can use your camera or upload a photo.
 
-Enter the following URL and click Add:
+AI Suggestion: Click the 'Magic Wand' icon to get the best name based on device type and location.
 
-Plaintext
-https://github.com/dicapriokim/Matter-Code-Vault
-Find Matter Code Vault in the list and click Install.
+Manual Entry: Ensure the pairing code is entered as an 11-digit number without hyphens or spaces.
+
+3. Exploring the Main UI
+AI Chat: Use the 'Ask AI' button for natural language queries about your devices or app usage.
+
+Status Badges:
+
+🔵 Blue: Full MT Payload (Raw Data) included.
+
+🔴 Red: Pairing code only (Payload missing).
+
+Sorting: Grab the [:::] handle on location headers to reorder your dashboard.
+
+⚙️ Configuration & API Key
+To enable AI features, you need a Google Gemini API Key:
+
+Go to HA Settings > Add-ons > Matter Code Vault > Configuration tab.
+
+Paste your key in the api_key field.
+
+Note: Core features (registration, backup, etc.) work perfectly even without an API key.
+
+🚀 How to Install
+Go to Add-ons > Add-on Store in Home Assistant.
+
+Select Repositories from the top-right menu.
+
+Add: https://github.com/dicapriokim/Matter-Code-Vault
+
+Find Matter Code Vault and click Install.
 
 ⚠️ Important Notes
-Data Storage: This app stores data locally in the /data/matter_data.json file within Home Assistant. Since deleting the add-on may also remove this data, always use the backup feature to keep a copy on your PC.
+Data Safety: Data is stored locally at /data/matter_data.json. Always export a JSON backup before deleting the add-on to prevent data loss.
 
-Camera Permissions: Due to browser security policies, the camera only functions in HTTPS or localhost (127.0.0.1) environments. When accessing via HTTP externally, please use the 'Photo Album' upload feature.
+Camera Access: Due to security policies, the camera requires HTTPS or localhost. Use 'Photo Upload' for remote HTTP access.
 
-Integrity Verification: The app verifies code integrity upon startup. If an "Unauthorized modification detected" warning appears, the app will be disabled. Please do not modify the core files.
+Integrity Check: Any unauthorized modification will trigger an integrity alert, disabling the app.
 
 Designed by 돼지지렁이
